@@ -39,7 +39,7 @@ public class ImageMetaDrew {
 		InputStream is=null;
 		try {
 			is = res.getInputStream();
-			fill(info,JpegMetadataReader.readMetadata(is));
+			fill(info, JpegMetadataReader.readMetadata(is));
 		}
 		catch(Throwable t) {
 			//throw Caster.toPageException(t);
@@ -64,13 +64,13 @@ public class ImageMetaDrew {
 	}
 
 	private static void fill(Struct info,Metadata metadata) throws MetadataException {
-		Iterator<Directory> directories = metadata.getDirectoryIterator();
+		Iterator<Directory> directories = metadata.getDirectories().iterator();
 		while (directories.hasNext()) {
 		    Directory directory = directories.next();
 		    Struct sct=new StructImpl();
 		    info.setEL(KeyImpl.init(directory.getName()), sct);
 		    
-		    Iterator<Tag> tags = directory.getTagIterator();
+		    Iterator<Tag> tags = directory.getTags().iterator();
 		    while (tags.hasNext()) {
 		        Tag tag = tags.next();
 		        sct.setEL(KeyImpl.init(tag.getTagName()), tag.getDescription());

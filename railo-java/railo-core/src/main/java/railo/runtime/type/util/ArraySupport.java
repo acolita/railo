@@ -1,12 +1,13 @@
 package railo.runtime.type.util;
 
-import java.util.AbstractList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
+import java.util.function.UnaryOperator;
 
 import railo.commons.lang.CFTypes;
 import railo.runtime.PageContext;
 import railo.runtime.converter.LazyConverter;
+import railo.runtime.dump.DumpData;
+import railo.runtime.dump.DumpProperties;
 import railo.runtime.exp.ExpressionException;
 import railo.runtime.exp.PageException;
 import railo.runtime.exp.PageRuntimeException;
@@ -51,7 +52,77 @@ public abstract class ArraySupport extends AbstractList implements Array,List,Si
 		}
 		return true;
 	}
-	
+
+	@Override
+	public void replaceAll(UnaryOperator operator) {
+
+	}
+
+	@Override
+	public void sort(Comparator c) {
+
+	}
+
+	@Override
+	public int size() {
+		return 0;
+	}
+
+	@Override
+	public Key[] keys() {
+		return new Key[0];
+	}
+
+	@Override
+	public Object remove(Key key) throws PageException {
+		return null;
+	}
+
+	@Override
+	public Object removeEL(Key key) {
+		return null;
+	}
+
+	@Override
+	public Object get(String key) throws PageException {
+		return null;
+	}
+
+	@Override
+	public Object get(Key key) throws PageException {
+		return null;
+	}
+
+	@Override
+	public Object get(String key, Object defaultValue) {
+		return null;
+	}
+
+	@Override
+	public Object get(Key key, Object defaultValue) {
+		return null;
+	}
+
+	@Override
+	public Object set(String key, Object value) throws PageException {
+		return null;
+	}
+
+	@Override
+	public Object set(Key key, Object value) throws PageException {
+		return null;
+	}
+
+	@Override
+	public Object setEL(String key, Object value) {
+		return null;
+	}
+
+	@Override
+	public Object setEL(Key key, Object value) {
+		return null;
+	}
+
 	@Override
 	public final boolean remove(Object o) {
 		int index = indexOf(o);
@@ -210,7 +281,12 @@ public abstract class ArraySupport extends AbstractList implements Array,List,Si
 		return duplicate(true);
 	}
 
-    @Override
+	@Override
+	public Collection duplicate(boolean deepCopy) {
+		return null;
+	}
+
+	@Override
     public String castToString() throws PageException {
         throw new ExpressionException("Can't cast Complex Object Type Array to String",
           "Use Built-In-Function \"serialize(Array):String\" to create a String from Array");
@@ -280,10 +356,35 @@ public abstract class ArraySupport extends AbstractList implements Array,List,Si
 	public List toList() {
 		return this;
 	}
-	
+
+	@Override
+	public Object removeE(int key) throws PageException {
+		return null;
+	}
+
+	@Override
+	public Object removeEL(int key) {
+		return null;
+	}
+
+	@Override
+	public Iterator<Key> keyIterator() {
+		return null;
+	}
+
+	@Override
+	public Iterator<String> keysAsStringIterator() {
+		return null;
+	}
+
 	@Override
 	public Iterator<Object> valueIterator() {
 		return iterator();
+	}
+
+	@Override
+	public Iterator<Map.Entry<Key, Object>> entryIterator() {
+		return null;
 	}
 
 	@Override
@@ -319,7 +420,62 @@ public abstract class ArraySupport extends AbstractList implements Array,List,Si
 	@Override
 	public java.util.Iterator<Object> getIterator() {
     	return valueIterator();
-    } 
+    }
+
+	@Override
+	public int getDimension() {
+		return 0;
+	}
+
+	@Override
+	public Object get(int key, Object defaultValue) {
+		return null;
+	}
+
+	@Override
+	public Object getE(int key) throws PageException {
+		return null;
+	}
+
+	@Override
+	public Object setEL(int key, Object value) {
+		return null;
+	}
+
+	@Override
+	public Object setE(int key, Object value) throws PageException {
+		return null;
+	}
+
+	@Override
+	public int[] intKeys() {
+		return new int[0];
+	}
+
+	@Override
+	public boolean insert(int key, Object value) throws PageException {
+		return false;
+	}
+
+	@Override
+	public Object append(Object o) throws PageException {
+		return null;
+	}
+
+	@Override
+	public Object appendEL(Object o) {
+		return null;
+	}
+
+	@Override
+	public Object prepend(Object o) throws PageException {
+		return null;
+	}
+
+	@Override
+	public void resize(int to) throws PageException {
+
+	}
 
 	@Override
 	public synchronized void sort(String sortType, String sortOrder) throws PageException {
@@ -332,6 +488,16 @@ public abstract class ArraySupport extends AbstractList implements Array,List,Si
 	public boolean equals(Object obj){
 		if(!(obj instanceof Collection)) return false;
 		return CollectionUtil.equals(this,(Collection)obj);
+	}
+
+	@Override
+	public DumpData toDumpData(PageContext pageContext, int maxlevel, DumpProperties properties) {
+		return null;
+	}
+
+	@Override
+	public long sizeOf() {
+		return 0;
 	}
 	
 	/*@Override

@@ -9,19 +9,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.nio.charset.Charset;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.TimeZone;
 
 import javax.servlet.ServletConfig;
 
 import org.jfree.chart.block.LabelBlockImpl;
-import org.safehaus.uuid.UUIDGenerator;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -652,7 +645,7 @@ public final class ConfigWebFactory extends ConfigFactory {
 		try {
 			if (!res.exists()) {
 				res.createNewFile();
-				IOUtil.write(res, securityKey = UUIDGenerator.getInstance().generateRandomBasedUUID().toString(), SystemUtil.getCharset(), false);
+				IOUtil.write(res, securityKey = UUID.randomUUID().toString(), SystemUtil.getCharset(), false);
 			}
 			else {
 				securityKey = IOUtil.toString(res, SystemUtil.getCharset());
@@ -662,7 +655,7 @@ public final class ConfigWebFactory extends ConfigFactory {
 		}
 
 		if (StringUtil.isEmpty(securityKey))
-			securityKey = UUIDGenerator.getInstance().generateRandomBasedUUID().toString();
+			securityKey = UUID.randomUUID().toString();
 
 		config.setSecurityKey(securityKey);
 	}

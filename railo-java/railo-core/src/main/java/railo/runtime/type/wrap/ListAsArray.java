@@ -186,9 +186,9 @@ public class ListAsArray implements Array,List,Sizeable {
 	}
 
 	@Override
-	public synchronized void sort(Comparator comp) throws PageException {
+	public synchronized void sort(Comparator comp) {
 		if(getDimension()>1)
-			throw new ExpressionException("only 1 dimensional arrays can be sorted");
+			throw new RuntimeException(new ExpressionException("only 1 dimensional arrays can be sorted"));
 		Collections.sort(list,comp);
 	}
 

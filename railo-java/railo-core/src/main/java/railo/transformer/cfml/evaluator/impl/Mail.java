@@ -20,7 +20,6 @@ import railo.transformer.library.tag.TagLibTag;
 public final class Mail extends EvaluatorSupport {
 
 	
-	//ç
 	/**
 	 * @see railo.transformer.cfml.evaluator.EvaluatorSupport#evaluate(org.w3c.dom.Element, railo.transformer.library.tag.TagLibTag)
 	 */

@@ -361,9 +361,8 @@ public final class XMLNodeList extends ArraySupport implements NodeList, XMLObje
 	}
 	
 	@Override
-	public void sort(Comparator comp)
-			throws ExpressionException {
-		throw new ExpressionException("can't sort a XML Node List Array");
+	public void sort(Comparator comp) {
+		throw new RuntimeException(new ExpressionException("can't sort a XML Node List Array"));
 	}
 
 	@Override

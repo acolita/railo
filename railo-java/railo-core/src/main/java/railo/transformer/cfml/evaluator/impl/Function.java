@@ -35,7 +35,6 @@ import railo.transformer.library.tag.TagLibTag;
  */
 public final class Function extends EvaluatorSupport {
 
-	//ç
 	/**
 	 * @see railo.transformer.cfml.evaluator.EvaluatorSupport#evaluate(org.w3c.dom.Element, railo.transformer.library.tag.TagLibTag)
 	 */
@@ -91,7 +90,7 @@ public final class Function extends EvaluatorSupport {
 		
 		
 		// Attribute Output
-		// "output=true" wird in "railo.transformer.cfml.attributes.impl.Function" gehändelt
+		// "output=true" wird in "railo.transformer.cfml.attributes.impl.Function" geh≈†ndelt
 		Attribute attrOutput = tag.getAttribute("output");
 		if(attrOutput!=null) {
 			Expression expr = CastBoolean.toExprBoolean(attrOutput.getValue());

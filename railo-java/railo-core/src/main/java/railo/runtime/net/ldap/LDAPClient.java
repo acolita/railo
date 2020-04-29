@@ -1,23 +1,5 @@
 package railo.runtime.net.ldap;
 
-import java.io.IOException;
-import java.security.Security;
-import java.util.Enumeration;
-import java.util.Hashtable;
-
-import javax.naming.NamingEnumeration;
-import javax.naming.NamingException;
-import javax.naming.directory.Attribute;
-import javax.naming.directory.Attributes;
-import javax.naming.directory.BasicAttribute;
-import javax.naming.directory.BasicAttributes;
-import javax.naming.directory.DirContext;
-import javax.naming.directory.InitialDirContext;
-import javax.naming.directory.ModificationItem;
-import javax.naming.directory.SearchControls;
-import javax.naming.directory.SearchResult;
-import javax.naming.ldap.InitialLdapContext;
-
 import railo.commons.lang.ClassException;
 import railo.commons.lang.ClassUtil;
 import railo.commons.lang.StringUtil;
@@ -29,7 +11,13 @@ import railo.runtime.type.Query;
 import railo.runtime.type.QueryImpl;
 import railo.runtime.type.util.ListUtil;
 
-import com.sun.net.ssl.internal.ssl.Provider;
+import javax.naming.NamingEnumeration;
+import javax.naming.NamingException;
+import javax.naming.directory.*;
+import javax.naming.ldap.InitialLdapContext;
+import java.io.IOException;
+import java.util.Enumeration;
+import java.util.Hashtable;
 
 
 /**
@@ -118,8 +106,9 @@ public final class LDAPClient {
             env.put("java.naming.ldap.factory.socket", "javax.net.ssl.SSLSocketFactory");
             //Class.orName("com.sun.net.ssl.internal.ssl.Provider");
             ClassUtil.loadClass("com.sun.net.ssl.internal.ssl.Provider");
-            
-            Security.addProvider(new Provider());
+
+            // TODO: Check implication
+            // Security.addProvider(new Provider());
             
         } 
         else if(secureLevel==SECURE_CFSSL_CLIENT_AUTH) {
@@ -240,7 +229,6 @@ public final class LDAPClient {
     
     
     /**
-     * @param dn
      * @param strAttributes
      * @param scope
      * @param startrow

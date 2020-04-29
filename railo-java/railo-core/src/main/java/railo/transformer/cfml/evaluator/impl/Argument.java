@@ -23,7 +23,6 @@ import railo.transformer.library.tag.TagLibTag;
  * Dem Tag <code>argument</code> muss als erstes im tag function vorkommen
  */
 public final class Argument extends EvaluatorSupport {
-//ç
 	/**
 	 * @see railo.transformer.cfml.evaluator.EvaluatorSupport#evaluate(org.w3c.dom.Element, railo.transformer.library.tag.TagLibTag)
 	 */

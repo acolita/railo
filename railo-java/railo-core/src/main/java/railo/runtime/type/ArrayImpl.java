@@ -450,9 +450,9 @@ public class ArrayImpl extends ArraySupport implements Sizeable {
 		}
 	}
 
-	public synchronized void sort(Comparator comp) throws PageException {
+	public synchronized void sort(Comparator comp) {
 		if(getDimension()>1)
-			throw new ExpressionException("only 1 dimensional arrays can be sorted");
+			throw new RuntimeException(new ExpressionException("only 1 dimensional arrays can be sorted"));
 		Arrays.sort(arr,offset,offset+size,comp);	
 	}
 	
