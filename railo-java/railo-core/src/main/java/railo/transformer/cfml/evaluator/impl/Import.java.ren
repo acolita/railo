@@ -1,0 +1,46 @@
+package railo.transformer.cfml.evaluator.impl;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
+
+import railo.commons.io.IOUtil;
+import railo.commons.io.res.Resource;
+import railo.commons.io.res.util.ResourceUtil;
+import railo.commons.lang.Md5;
+import railo.commons.lang.StringUtil;
+import railo.commons.lang.SystemOut;
+import railo.loader.util.Util;
+import railo.runtime.PageSource;
+import railo.runtime.config.Config;
+import railo.runtime.config.ConfigImpl;
+import railo.runtime.config.ConfigWebUtil;
+import railo.runtime.exp.TemplateException;
+import railo.transformer.bytecode.statement.tag.Attribute;
+import railo.transformer.bytecode.statement.tag.Tag;
+import railo.transformer.bytecode.statement.tag.TagImport;
+import railo.transformer.bytecode.util.ASMUtil;
+import railo.transformer.cfml.Data;
+import railo.transformer.cfml.evaluator.EvaluatorException;
+import railo.transformer.cfml.evaluator.EvaluatorSupport;
+import railo.transformer.library.function.FunctionLib;
+import railo.transformer.library.tag.CustomTagLib;
+import railo.transformer.library.tag.TagLib;
+import railo.transformer.library.tag.TagLibException;
+import railo.transformer.library.tag.TagLibFactory;
+import railo.transformer.library.tag.TagLibTag;
+import railo.transformer.util.CFMLString;
+
+
+/**
+ * 
+ */
+public final class Import extends EvaluatorSupport {
+	
+	public void evaluate(Tag tag,TagLibTag libTag) throws EvaluatorException {
+	}
+	
+    
+	//

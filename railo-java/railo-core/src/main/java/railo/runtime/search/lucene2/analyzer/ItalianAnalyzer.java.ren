@@ -1,0 +1,29 @@
+package railo.runtime.search.lucene2.analyzer;
+
+import java.io.Reader;
+
+import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.TokenStream;
+import org.apache.lucene.analysis.snowball.SnowballAnalyzer;
+
+
+/**
+ * <p>Analyzer for Italian language</p>
+ */
+public final class ItalianAnalyzer extends Analyzer {
+
+	private static SnowballAnalyzer analyzer;
+
+	private final static String[] STOP_WORDS = { "a", "abbia",
+                    "abbiamo", "abbiano", "abbiate", "ad", "agl", "agli", "ai",
+                    "al", "all", "alla", "alle", "allo", "anche", "avemmo",
+                    "avendo", "avesse", "avessero", "avessi", "avessimo",
+                    "aveste", "avesti", "avete", "aveva", "avevamo", "avevano",
+                    "avevate", "avevi", "avevo", "avrˆ", "avrai", "avranno",
+                    "avrebbe", "avrebbero", "avrei", "avremmo", "avremo",
+                    "avreste", "avresti", "avrete", "avr˜", "avuta", "avute",
+                    "avuti", "avuto", "c", "che", "chi", "ci", "coi", "come",
+                    "con", "contro", "cui", "da", "dagl", "dagli", "dai",
+                    "dal", "dall", "dalle", "dallo", "degl", "degli", "dei",
+                    "del", "dell", "della", "delle", "dello", "di", "dov",
+                    "dove", "e", "

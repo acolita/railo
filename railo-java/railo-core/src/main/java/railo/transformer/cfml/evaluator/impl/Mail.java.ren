@@ -1,0 +1,23 @@
+package railo.transformer.cfml.evaluator.impl;
+
+import railo.transformer.bytecode.Body;
+import railo.transformer.bytecode.BodyBase;
+import railo.transformer.bytecode.literal.LitBoolean;
+import railo.transformer.bytecode.statement.tag.Attribute;
+import railo.transformer.bytecode.statement.tag.Tag;
+import railo.transformer.bytecode.statement.tag.TagOutput;
+import railo.transformer.bytecode.util.ASMUtil;
+import railo.transformer.cfml.evaluator.EvaluatorException;
+import railo.transformer.cfml.evaluator.EvaluatorSupport;
+import railo.transformer.library.tag.TagLib;
+import railo.transformer.library.tag.TagLibTag;
+
+
+/**
+ * Prueft den Kontext des Tag Mail.
+
+ */
+public final class Mail extends EvaluatorSupport {
+
+	
+	//

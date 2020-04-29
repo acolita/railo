@@ -25,6 +25,13 @@ railo-java/railo-core/target/
 railo-java/railo-debug/target/
 railo-java/railo-instrumentation/target/
 railo-java/railo-loader/target/
+railo-java/.idea/
+railo-java/railo-core/railo-core.iml
+railo-java/railo-debug/railo-debug.iml
+railo-java/railo-instrumentation/railo-instrumentation.iml
+railo-java/railo-loader/railo-loader.iml
+railo-java/railo-loader/src/main/
+railo-java/railo-parent.iml
 /*.project
 va specific
 *.class

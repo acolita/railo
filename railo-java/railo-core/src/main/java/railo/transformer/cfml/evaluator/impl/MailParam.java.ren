@@ -1,0 +1,20 @@
+package railo.transformer.cfml.evaluator.impl;
+
+import railo.transformer.bytecode.statement.tag.Tag;
+import railo.transformer.cfml.evaluator.ChildEvaluator;
+import railo.transformer.cfml.evaluator.EvaluatorException;
+import railo.transformer.library.tag.TagLibTag;
+
+
+
+/**
+ * Prueft den Kontext des Tag mailparam.
+ * Das Tag <code>mailParam</code> darf nur innerhalb des Tag <code>mail</code> liegen.
+ */
+public final class MailParam extends ChildEvaluator {
+
+	protected String getParentName() {
+		return "mail";
+	}
+
+//
