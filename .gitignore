@@ -21,6 +21,10 @@ railo-java/railo-core/.DS_Store
 railo-java/railo-core/src/resource/library/tag/.DS_Store
 railo-java/railo-core/bin/.DS_Store
 railo-cfml/railo-admin/admin2/
+railo-java/railo-core/target/
+railo-java/railo-debug/target/
+railo-java/railo-instrumentation/target/
+railo-java/railo-loader/target/
 /*.project
 va specific
 *.class
@@ -31,7 +35,6 @@ va specific
 *.DS_Store
 *.swp
 *.out
-pom.xml
 sample.mov
 /.idea/
 /*.iml
